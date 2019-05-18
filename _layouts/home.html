@@ -11,7 +11,7 @@ layout: default
     <div class="row no-gutters">
       {% if post.img %}
       <div class="col-md-3">
-        <img class="card-img" src="{{ post.img | escape }}" alt="{{ page.img | escape }}">
+        <img class="card-img" data-src="{{ post.img | escape }}" alt="{{ post.img | escape }}">
       </div>
       {%- endif -%}
       <div class="col-md">

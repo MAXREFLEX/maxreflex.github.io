@@ -1,0 +1,11 @@
+@import "css/bootstrap.min.css";
+
+img {
+  display: block;
+  opacity: 1;
+}
+ 
+img[data-src] {  
+  display: none;
+  opacity: 0;
+}

@@ -4,7 +4,7 @@ layout: default
 <div class="container mt-2 mb-2">
     <div class="card mt-2 mb-2">
         {% if page.img %}
-        <img class="bd-placeholder-img card-img-top" src="{{ page.img | escape }}" alt="{{ page.img | escape }}">
+        <img class="bd-placeholder-img card-img-top" data-src="{{ page.img | escape }}" alt="{{ page.img | escape }}">
         {%- endif -%}
         <div class="card-body">
             <h1 href="#" class="card-title">{{ page.title | escape }}</h1>
