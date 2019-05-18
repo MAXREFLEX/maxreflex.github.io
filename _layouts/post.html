@@ -3,9 +3,9 @@ layout: default
 ---
 <div class="container mt-2 mb-2">
     <div class="card mt-2 mb-2">
-        <svg class="bd-placeholder-img card-img-top" width="100%" height="100%">
-            <rect width="100%" height="100%" fill="#868e96"></rect>
-        </svg>
+        {% if page.img %}
+        <img class="bd-placeholder-img card-img-top" src="{{ page.img | escape }}" alt="{{ page.img | escape }}">
+        {%- endif -%}
         <div class="card-body">
             <h1 href="#" class="card-title">{{ page.title | escape }}</h1>
             <div class="card-text">
