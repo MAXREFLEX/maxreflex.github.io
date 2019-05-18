@@ -2,22 +2,28 @@
 layout: default
 ---
 {%- if site.posts.size > 0 -%}
-<div class="container mt-2 mb-2">
+<div class="container mt-2">
   <h1>{{ page.list_title | default: "Posts" }}</h1>
 </div>
-<div class="container mt-2 mb-2">
+<div class="container mb-2">
   {%- for post in paginator.posts -%}
   <div class="card mt-2 mb-2">
-    {% if post.img %}
-    <img class="bd-placeholder-img card-img-top" src="{{ post.img | escape }}" alt="{{ page.img | escape }}">
-    {%- endif -%}
-    <div class="card-body">
-      <h5 class="card-title">
-        <a href="{{ post.url | relative_url }}" class="card-title">{{ post.title | escape }}</a>
-      </h5>
-      {%- if post.prehistory -%}
-      <p class="card-text">{{ post.prehistory }}</p>
+    <div class="row no-gutters">
+      {% if post.img %}
+      <div class="col-md-3">
+        <img class="card-img" src="{{ post.img | escape }}" alt="{{ page.img | escape }}">
+      </div>
       {%- endif -%}
+      <div class="col-md">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{ post.url | relative_url }}" class="card-title">{{ post.title | escape }}</a>
+          </h5>
+          {%- if post.prehistory -%}
+          <p class="card-text">{{ post.prehistory }}</p>
+          {%- endif -%}
+        </div>
+      </div>
     </div>
   </div>
   {%- endfor -%}
