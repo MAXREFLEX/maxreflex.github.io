@@ -12,9 +12,11 @@ layout: default
     <img class="bd-placeholder-img card-img-top" src="{{ post.img | escape }}" alt="{{ page.img | escape }}">
     {%- endif -%}
     <div class="card-body">
-      <a href="{{ post.url | relative_url }}" class="h5 card-title">{{ post.title | escape }}</a>
-      {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
+      <h5 class="card-title">
+        <a href="{{ post.url | relative_url }}" class="card-title">{{ post.title | escape }}</a>
+      </h5>
+      {%- if post.prehistory -%}
+      <p class="card-text">{{ post.prehistory }}</p>
       {%- endif -%}
     </div>
   </div>
