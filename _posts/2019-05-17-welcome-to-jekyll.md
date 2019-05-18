@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2019-05-17 21:27:17 +0400
 categories: jekyll update
-img: "https://www.thesprucepets.com/thmb/ci1DK9b7OP92DsSfZ3l8apt1h48=/3558x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Cat-rolling-GettyImages-165893132-58ac5ef05f9b58a3c90a144f.jpg"
+img: "/assets/img/Cat-rolling-GettyImages.webp"
 prehistory: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.s
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
