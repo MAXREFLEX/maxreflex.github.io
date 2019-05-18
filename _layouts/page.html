@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="container mt-2 mb-2">
+    <div class="card mt-2 mb-2">
+        <div class="card-body">
+            <h1 href="#" class="card-title">{{ page.title | escape }}</h1>
+            <div class="card-text">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>
+{%- if site.disqus.shortname -%}
+{%- include disqus_comments.html -%}
+{%- endif -%}

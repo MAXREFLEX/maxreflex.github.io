@@ -1,0 +1,55 @@
+---
+layout: default
+---
+{%- if site.posts.size > 0 -%}
+<div class="container mt-2 mb-2">
+  <h1>{{ page.list_title | default: "Posts" }}</h1>
+</div>
+<div class="container mt-2 mb-2">
+  {%- for post in paginator.posts -%}
+  <div class="card mt-2 mb-2">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="100%">
+      <rect width="100%" height="100%" fill="#868e96"></rect>
+    </svg>
+    <div class="card-body">
+      <a href="{{ post.url | relative_url }}" class="h5 card-title">{{ post.title | escape }}</a>
+      {%- if site.show_excerpts -%}
+      {{ post.excerpt }}
+      {%- endif -%}
+    </div>
+  </div>
+  {%- endfor -%}
+</div>
+{%- endif -%}
+
+{% if paginator.total_pages > 1 %}
+<ul class="nav nav-pills justify-content-center">
+  {% if paginator.previous_page %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ paginator.previous_page_path | relative_url }}">Prev</a>
+  </li>
+  {% endif %}
+  
+  {% comment %}
+  {% for page in (1..paginator.total_pages) %}
+
+  <li class="nav-item">
+      {% if page == paginator.page %}
+      <a class="nav-link active" href="{{ relative_url }}">{{ page }}</a>
+      {% elsif page == 1 %}
+      <a class="nav-link" href="/">{{ page }}</a>
+      {% else %}
+      <a class="nav-link" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+      {% endif %}
+  </li>
+  
+  {% endfor %}
+  {% endcomment %}
+
+  {% if paginator.next_page %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ paginator.next_page_path | relative_url }}">Next</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
