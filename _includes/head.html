@@ -76,7 +76,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="{{ "/assets/main.css"" | relative_url }}" as="style">
+  <link rel="preload" href="{{ "/assets/main.css"" | relative_url }}" as="style" onload="this.rel='stylesheet'">
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include_cached google-analytics.html -%}
