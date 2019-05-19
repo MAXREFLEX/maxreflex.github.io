@@ -9,3 +9,6 @@ img[data-src] {
   display: none;
   opacity: 0;
 }
+
+#content { display: block; }
+#pulsing {display: none; }

@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ include.lang | default: site.lang | default: "en" }}">
 
-  {%- include head.html -%}
+{%- include_cached head.html -%}
 
-  <body style="display:none">
+<body>
 
-    {%- include header.html -%}
+  <div id="pulsing">
+    <div class="pulsing-rings">
+      <div class="pulsing-ringlet"></div>
+      <div class="pulsing-ringlet"></div>
+      <div class="pulsing-ringlet"></div>
+    </div>
+  </div>
+  <div id="content">
+    {%- include_cached header.html -%}
 
     {{ content }}
 
-    {%- include footer.html -%}
+    {%- include_cached footer.html -%}
+  </div>
 
-  </body>
+
+</body>
 
 </html>

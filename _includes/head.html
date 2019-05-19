@@ -3,9 +3,82 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
-  <link rel="stylesheet" href="{{ "/assets/main.css"" | relative_url }}" as="style" onload="body.style='display: block;'">
+  <style>
+    #content {display: none; }
+
+    #pulsing {
+      position: static;
+      display: table;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 125%;
+      line-height: 1.5;
+      letter-spacing: .02em;
+      color: #363232;
+      font-smooth: always;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      z-index: 1;
+    }
+
+    .pulsing-rings {
+      bottom: -75px;
+      left: 0;
+    }
+
+    .pulsing-rings {
+      display: block;
+    }
+
+    .pulsing-rings {
+      /*position: fixed;*/
+      position: relative;
+      margin: auto;
+      width: 150px;
+      height: 150px;
+    }
+
+    .pulsing-rings .pulsing-ringlet {
+      width: 150px;
+      height: 150px;
+      background: #fff;
+      border: 1px solid #6EAAFF;
+      border-radius: 50%;
+      position: absolute;
+      transform: scale(0.1, 0.1);
+      opacity: 0;
+      animation: pulse 3000ms ease-out infinite;
+    }
+
+    .pulsing-rings .pulsing-ringlet:nth-of-type(2) {
+      animation-delay: 600ms;
+    }
+
+    .pulsing-rings .pulsing-ringlet:nth-of-type(3) {
+      animation-delay: 1200ms;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.1, 0.1);
+        opacity: 0
+      }
+
+      50% {
+        opacity: 1
+      }
+
+      100% {
+        transform: scale(1.2, 1.2);
+        opacity: 0
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="{{ "/assets/main.css"" | relative_url }}" as="style">
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
-  {%- include google-analytics.html -%}
+  {%- include_cached google-analytics.html -%}
   {%- endif -%}
 </head>
