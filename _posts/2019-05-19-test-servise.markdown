@@ -8,5 +8,5 @@ layout: post
 
 Video
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hOYzB3Qa9DE" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4_Ise68o4Ww" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
