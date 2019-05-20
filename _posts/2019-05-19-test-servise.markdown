@@ -8,5 +8,5 @@ layout: post
 
 Video
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/X81YJldQu2I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item bg-light border" data-src="https://www.youtube-nocookie.com/embed/X81YJldQu2I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen onclick=""></iframe>
 </div>

@@ -7,35 +7,69 @@
         </footer>
     </div>
 </div>
+
+<script data-src="{{ "/assets/main.js" | relative_url }}" crossorigin="anonymous" defer></script>
 <script>
-    [].forEach.call(document.querySelectorAll('link[data-href]'), function (img) {
+
+    var links = document.querySelectorAll('link[data-href]'),
+        scripts = document.querySelectorAll('script[data-src]'),
+        imgs = document.querySelectorAll('img[data-src]'),
+        iframes = document.querySelectorAll('iframe[data-src]');
+
+    var linksL = links.length - 1,
+        scriptsL = links.length - 1,
+        imgsL = imgs.length - 1;
+
+    [].forEach.call(links, function (img, i) {
         img.setAttribute('href', img.getAttribute('data-href'));
+
+        img.removeAttribute('data-href');
+
         img.onload = function () {
-            img.removeAttribute('data-href');
-            lal();
+            if (linksL == i)
+                lal();
         };
     });
 
     function lal() {
-        [].forEach.call(document.querySelectorAll('script[data-src]'), function (img) {
+        [].forEach.call(scripts, function (img, i) {
             img.setAttribute('src', img.getAttribute('data-src'));
+
+            img.removeAttribute('data-src');
+
             img.onload = function () {
-                img.removeAttribute('data-src');
-                lol();
+                if (scriptsL == i)
+                    lol();
             };
         });
     }
 
     function lol() {
-        [].forEach.call(document.querySelectorAll('img[data-src]'), function (img) {
+        [].forEach.call(imgs, function (img, i) {
             img.setAttribute('src', img.getAttribute('data-src'));
+
+            img.removeAttribute('data-src');
+
             img.onload = function () {
-                img.removeAttribute('data-src');
+                if (img.getAttribute('data-parent-a-class'))
+                    img.parentNode.className += ` ${img.getAttribute('data-parent-a-class')}`;
+                if (img.getAttribute('data-r-class'))
+                    img.className = img.className.replace(img.getAttribute('data-r-class'), "");
+
+                /*if (imgsL == i) {
+                    if (typeof (commentsStart) === "function")
+                        commentsStart();
+                }*/
             };
         });
     }
+
+    [].forEach.call(iframes, function (img, i) {
+        img.contentWindow.document.body.onclick = function () {
+            console.log(1);
+            img.setAttribute('src', img.getAttribute('data-src'));
+
+            img.removeAttribute('data-src');
+        };
+    });
 </script>
-<script data-src="{{ "/assets/main.js" | relative_url }}" crossorigin="anonymous" defer></script>
-<!--<script data-src="{{ "/assets/js/jquery-3.3.1.slim.min.js" | relative_url }}" crossorigin="anonymous" defer></script>
-<script data-src="{{ "/assets/js/popper.min.js" | relative_url }}" crossorigin="anonymous" defer></script>
-<script data-src="{{ "/assets/js/bootstrap.min.js" | relative_url }}" crossorigin="anonymous" defer></script>-->

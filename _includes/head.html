@@ -4,7 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
   <style>
-    #content {display: none; }
+    #content {
+      display: none;
+    }
 
     #pulsing {
       position: static;
@@ -74,6 +76,13 @@
         transform: scale(1.2, 1.2);
         opacity: 0
       }
+    }
+
+    iframe[data-src] {
+      background-image: url(/assets/img/play.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20%;
     }
   </style>
   <link rel="stylesheet" data-href="{{ "/assets/main.css"" | relative_url }}" as="style">

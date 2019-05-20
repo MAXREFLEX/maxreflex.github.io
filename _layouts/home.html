@@ -11,8 +11,8 @@ layout: default
   <div class="card mt-2 mb-2">
     <div class="row no-gutters">
       {% if post.img %}
-      <div class="col-md-3 d-flex align-items-center justify-content-center">
-        <img class="card-img" data-src="{{ post.img | escape }}" alt="{{ post.img | escape }}">
+      <div class="d-flex align-items-center justify-content-center">
+        <img class="card-img d-none" data-src="{{ post.img | escape }}" alt="{{ post.img | escape }}" data-parent-a-class="col-md-3" data-r-class="d-none">
       </div>
       {%- endif -%}
       <div class="col-md d-flex align-items-center justify-content-center">
