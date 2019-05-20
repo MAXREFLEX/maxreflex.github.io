@@ -39,6 +39,7 @@
 
             img.onload = function () {
                 if (scriptsL == i)
+                    lil();
                     lol();
             };
         });
@@ -57,7 +58,6 @@
                     img.className = img.className.replace(img.getAttribute('data-r-class'), "");
 
                 if (imgsL == i) {
-                    lil();
                     /*
                      if (typeof (commentsStart) === "function")
                         commentsStart();

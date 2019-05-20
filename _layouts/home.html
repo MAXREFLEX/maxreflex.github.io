@@ -10,7 +10,7 @@ layout: default
   {%- for post in paginator.posts -%}
   <div class="card mt-2 mb-2">
     <div class="row no-gutters">
-      {% if post.img %}
+      {% if post.image %}
       <div class="d-flex align-items-center justify-content-center">
         <img class="card-img d-none" data-src="{{ post.image | escape }}" alt="{{ post.image | escape }}" data-parent-a-class="col-md-3" data-r-class="d-none">
       </div>
