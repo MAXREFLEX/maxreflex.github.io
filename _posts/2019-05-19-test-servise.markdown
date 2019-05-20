@@ -2,7 +2,7 @@
 title: Test servise
 date: 2019-05-19 14:37:00 Z
 prehistory: Video
-img: "/assets/img/cat-649164_1280.jpeg"
+image: "/assets/img/cat-649164_1280.jpeg"
 layout: post
 ---
 
