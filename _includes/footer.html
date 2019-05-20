@@ -56,20 +56,24 @@
                 if (img.getAttribute('data-r-class'))
                     img.className = img.className.replace(img.getAttribute('data-r-class'), "");
 
-                /*if (imgsL == i) {
-                    if (typeof (commentsStart) === "function")
-                        commentsStart();
-                }*/
+                if (imgsL == i) {
+                    lil();
+                }
             };
         });
     }
 
-    [].forEach.call(iframes, function (img, i) {
-        img.contentWindow.document.body.onclick = function () {
-            console.log(1);
-            img.setAttribute('src', img.getAttribute('data-src'));
+    function lil() {
+        [].forEach.call(iframes, function (img, i) {
+            img.contentWindow.document.body.onclick = function () {
+                console.log(1);
+                img.setAttribute('src', img.getAttribute('data-src'));
 
-            img.removeAttribute('data-src');
-        };
-    });
+                img.removeAttribute('data-src');
+
+
+            };
+            $(img).contents().find("head").append($("<style type='text/css'>  body{cursor:pointer}  </style>"));
+        });
+    }
 </script>
