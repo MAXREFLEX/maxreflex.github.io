@@ -27,7 +27,7 @@ plugins:
 - jekyll-admin
 disqus:
   shortname: maxreflex-github-io
-google_analytics: "UA-140814420-1"
+google_analytics: UA-140814420-1
 comments: true
 paginate: 5
 paginate_path: "/blog/page:num/"
