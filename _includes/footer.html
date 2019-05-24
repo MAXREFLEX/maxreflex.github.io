@@ -58,6 +58,7 @@
                     img.className = img.className.replace(img.getAttribute('data-r-class'), "");
 
                 if (imgsL == i) {
+                    ga('create', '{{ site.google_analytics }}', 'auto');
                     /*
                      if (typeof (commentsStart) === "function")
                         commentsStart();
