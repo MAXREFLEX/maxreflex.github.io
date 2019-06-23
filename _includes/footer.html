@@ -37,6 +37,20 @@
 
     var lizsc = true;
 
+    function lizscF() {
+        if (lizsc) {
+            lizsc = !lizsc;
+            if (typeof window.orientation !== 'undefined') {
+
+            }
+            else {
+                $("#disqus_comments").click();
+                l = $("iframe[data-src]");
+                l.attr("src", l.attr("data-src"));
+            }
+        }
+    }
+
     function lal() {
         [].forEach.call(scripts, function (img, i) {
             img.setAttribute('src', img.getAttribute('data-src'));
@@ -48,17 +62,9 @@
                     lil();
 
                     $(document).scroll(function () {
-                        if (lizsc) {
-                            lizsc = !lizsc;
-                            if (typeof window.orientation !== 'undefined') {
-
-                            }
-                            else {
-                                $("#disqus_comments").click();
-                                l = $("iframe[data-src]");
-                                l.attr("src", l.attr("data-src"));
-                            }
-                        }
+                        lizscF();
+                    }).hover(function(){
+                        lizscF();
                     });
                 }
                 lol();
