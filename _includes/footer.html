@@ -51,6 +51,8 @@
                         }
                         else {
                             $("#disqus_comments").click();
+                            l = $( "iframe[data-src]" );
+                            l.attr( "src", l.attr( "data-src"));
                         }
                     });
                 }
