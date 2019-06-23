@@ -11,7 +11,7 @@
 <script data-src="{{ "/assets/main.js" | relative_url }}" crossorigin="anonymous" defer></script>
 <script>
 
-    document.querySelectorAll('table').forEach.call(links, function (img, i) {
+    [].forEach.call(document.querySelectorAll('table'), function (img, i) {
         img.setAttribute('class', 'table');
     });
 
