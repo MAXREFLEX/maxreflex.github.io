@@ -35,6 +35,8 @@
         };
     });
 
+    var lizsc = true;
+
     function lal() {
         [].forEach.call(scripts, function (img, i) {
             img.setAttribute('src', img.getAttribute('data-src'));
@@ -46,14 +48,16 @@
                     lil();
 
                     $(document).scroll(function () {
-                        if (typeof window.orientation !== 'undefined') {
+                        if (lizsc) {
+                            lizsc = !lizsc;
+                            if (typeof window.orientation !== 'undefined') {
 
-                        }
-                        else {
-                            $("#disqus_comments").click();
-                            l = $( "iframe[data-src]" );
-                            l.attr( "src", l.attr( "data-src"));
-                            l.attr( "data-src", "")
+                            }
+                            else {
+                                $("#disqus_comments").click();
+                                l = $("iframe[data-src]");
+                                l.attr("src", l.attr("data-src"));
+                            }
                         }
                     });
                 }
