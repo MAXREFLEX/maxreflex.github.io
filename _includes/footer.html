@@ -11,6 +11,10 @@
 <script data-src="{{ "/assets/main.js" | relative_url }}" crossorigin="anonymous" defer></script>
 <script>
 
+    document.querySelectorAll('table').forEach.call(links, function (img, i) {
+        img.setAttribute('class', 'table');
+    });
+
     var links = document.querySelectorAll('link[data-href]'),
         scripts = document.querySelectorAll('script[data-src]'),
         imgs = document.querySelectorAll('img[data-src]'),
@@ -40,7 +44,7 @@
             img.onload = function () {
                 if (scriptsL == i)
                     lil();
-                    lol();
+                lol();
             };
         });
     }
