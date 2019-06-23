@@ -1,7 +1,7 @@
 {%- if page.comments != false and jekyll.environment == "production" -%}
 
 <div class="container mt-2 mb-2 text-center" id="comments">
-  <button type="button" onclick="commentsStart(this)" class="btn btn-primary">Comments</button>
+  <button id="disqus_comments" type="button" onclick="commentsStart(this)" class="btn btn-primary">Comments</button>
   <div id="disqus_thread"></div>
 </div>
 

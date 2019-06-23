@@ -42,8 +42,15 @@
             img.removeAttribute('data-src');
 
             img.onload = function () {
-                if (scriptsL == i)
+                if (scriptsL == i) {
                     lil();
+                    if (typeof window.orientation !== 'undefined') {
+
+                    }
+                    else {
+                        $("#disqus_comments").click();
+                    }
+                }
                 lol();
             };
         });
